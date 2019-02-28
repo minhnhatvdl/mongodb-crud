@@ -6,12 +6,12 @@ mongoose
   .connect("mongodb://localhost:27017/courses", { useNewUrlParser: true })
   .then(() => console.log("connected to server"))
   .catch(error => console.log(error));
-// create a document in collection
-const course1 = new Course({
-  name: "MongoDb",
-  author: "minhnhat",
-  tags: ["mongodb", "mongoose"],
-  isPublished: true,
-  price: 10
+
+Course.findById("001").then(course => {
+  course.author = "minhnhat";
+  course.name = "Mongo minh";
+  course
+    .save()
+    .then(console.log)
+    .catch(console.log);
 });
-course1.save().then(course => console.log(course));

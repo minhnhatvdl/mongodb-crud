@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 const CourseSchema = new Schema({
+  _id: String,
   name: String,
   author: String,
   tags: [String],

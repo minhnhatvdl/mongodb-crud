@@ -1,0 +1,70 @@
+[
+  {
+    "_id": "001",
+    "tags": ["express", "backend"],
+    "name": "ExpressJS",
+    "author": "Mosh",
+    "isPublished": true,
+    "price": 10,
+    "__v": 0
+  },
+  {
+    "_id": "002",
+    "tags": ["node", "backend"],
+    "date": "2018-01-24T21:42:47.912Z",
+    "name": "NodeJS",
+    "author": "Mosh",
+    "isPublished": true,
+    "price": 20,
+    "__v": 0
+  },
+  {
+    "_id": "003",
+    "tags": ["aspnet", "backend"],
+    "date": "2018-01-24T21:42:59.605Z",
+    "name": "ASP.NET MVC",
+    "author": "Mosh",
+    "isPublished": true,
+    "price": 15,
+    "__v": 0
+  },
+  {
+    "_id": "004",
+    "tags": ["react", "frontend"],
+    "date": "2018-01-24T21:43:21.589Z",
+    "name": "React",
+    "author": "Mosh",
+    "isPublished": false,
+    "__v": 0
+  },
+  {
+    "_id": "005",
+    "tags": ["node", "backend"],
+    "date": "2018-01-24T21:44:01.075Z",
+    "name": "NodeJS by Jack",
+    "author": "Jack",
+    "isPublished": true,
+    "price": 12,
+    "__v": 0
+  },
+  {
+    "_id": "006",
+    "tags": ["node", "backend"],
+    "date": "2018-01-24T21:47:53.128Z",
+    "name": "NodeJS by Mary",
+    "author": "Mary",
+    "isPublished": false,
+    "price": 12,
+    "__v": 0
+  },
+  {
+    "_id": "007",
+    "tags": ["angular", "frontend"],
+    "date": "2018-01-24T21:56:15.353Z",
+    "name": "Angular",
+    "author": "Mosh",
+    "isPublished": true,
+    "price": 15,
+    "__v": 0
+  }
+]
