@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/minhnhatvdl/mongodb-crud/issues"
   },
-  "homepage": "https://github.com/minhnhatvdl/mongodb-crud#readme"
+  "homepage": "https://github.com/minhnhatvdl/mongodb-crud#readme",
+  "dependencies": {
+    "mongoose": "^5.4.16",
+    "nodemon": "^1.18.10"
+  }
 }
