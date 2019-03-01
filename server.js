@@ -8,10 +8,21 @@ mongoose
   .catch(error => console.log(error));
 // create a document in collection
 const course1 = new Course({
-  name: "MongoDb",
   author: "minhnhat",
-  tags: ["mongodb", "mongoose"],
+  tags: ["mongodb"],
   isPublished: true,
   price: 10
 });
-course1.save().then(course => console.log(course));
+
+createCourse = async course => {
+  try {
+    const result = await course.save();
+    console.log(result);
+  } catch (error) {
+    for(let index in error.errors) {
+        console.log(error.errors[index].message);
+    }
+  }
+};
+
+createCourse(course1);
