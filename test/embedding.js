@@ -19,29 +19,8 @@ createElement = async element => {
   }
 };
 
-// create model post
-const PostSchema = new Schema({
-  title: { type: String, required: true },
-  content: { type: String, required: true }
-});
-const Post = mongoose.model("Post", PostSchema);
-
-// create a instance of post
-const post1 = new Post({
-  title: "post 1",
-  content: "aaa"
-});
-const post2 = new Post({
-  title: "post 2",
-  content: "bbb"
-});
-
 // create model comment
 const CommentSchema = new Schema({
-  postId: {
-    type: Schema.Types.ObjectId,
-    ref: "Post"
-  },
   user: { type: String, required: true },
   comment: { type: String, required: true }
 });
@@ -49,42 +28,37 @@ const Comment = mongoose.model("Comment", CommentSchema);
 
 // create instances of comment
 const comment1 = new Comment({
-  postId: post1._id,
   user: "user 1",
   comment: "comment 1"
 });
 const comment2 = new Comment({
-  postId: post1._id,
   user: "user 2",
   comment: "comment 2"
 });
 const comment3 = new Comment({
-  postId: post1._id,
   user: "user 3",
   comment: "comment 3"
 });
 const comment4 = new Comment({
-  postId: post1._id,
   user: "user 4",
   comment: "comment 4"
 });
-const comment5 = new Comment({
-  postId: post2._id,
-  user: "user 5",
-  comment: "comment 5"
+
+// create model post
+const PostSchema = new Schema({
+  title: { type: String, required: true },
+  content: { type: String, required: true },
+  comments: [CommentSchema]
 });
-const comment6 = new Comment({
-  postId: post2._id,
-  user: "user 6",
-  comment: "comment 6"
+const Post = mongoose.model("Post", PostSchema);
+
+// create a instance of post
+const post1 = new Post({
+  title: "post 1",
+  content: "aaa",
+  comments: [comment1, comment2, comment3, comment4]
 });
 
-// create instances
-// createElement(post2);
-// createElement(comment5);
-// createElement(comment6);
+createElement(post1);
 
-// query
-Comment.find({}, { postId: 1, user: 1, comment: 1, _id: 0 })
-  .populate("postId", { title: 1, _id: 0 })
-  .then(console.log);
+Post.find().then(console.log);
